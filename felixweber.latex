@@ -28,6 +28,7 @@
 \usepackage{pdflscape}
 \newcommand{\blandscape}{\begin{landscape}}
 		\newcommand{\elandscape}{\end{landscape}}
+\newcommand{\passthrough}[1]{#1}
 
 %% ─── FONTS ────────────────────────────────────────────────────────────────────
 %% XeLaTeX / LuaLaTeX: load TTF/OTF fonts directly from the system or ./fonts/
@@ -48,7 +49,7 @@
 		}
 ]
 %% Scaled down IBM Plex Mono by 1pt (Scale=0.9) to match W95FA
-\setmonofont{IBM Plex Mono}[Scale=0.9]
+\setmonofont{IBM Plex Mono}
 
 %% ─── UNICODE CHARACTER FALLBACKS ─────────────────────────────────────────────
 %% FallbackFonts is unreliable on macOS XeLaTeX/AAT.
@@ -223,8 +224,11 @@
 %% Renders text with a single-colour pixel-offset shadow layer beneath FWText.
 \newcommand{\fwshadowhead}[4]{%
 	\leavevmode
-	\rlap{\raisebox{#3}{\hspace{#2}\textcolor{#1}{#4}}}%
-	\textcolor{FWText}{#4}%
+	\rlap{\raisebox{#3}[0pt][0pt]{%
+			\hspace*{#2}%
+			\parbox[t]{\linewidth}{\raggedright\color{#1}#4}%
+		}}%
+	\parbox[t]{\linewidth}{\raggedright\color{FWText}#4}%
 }
 
 %% ─── HORIZONTAL RULE — square dotted line for Pandoc thematic breaks ────────
