@@ -48,14 +48,14 @@
 			{Noto Sans Symbols 2},
 		}
 ]
-%% Scaled down IBM Plex Mono by 1pt (Scale=0.9) to match W95FA
+
 \setmonofont{IBM Plex Mono}
 
 %% ─── UNICODE CHARACTER FALLBACKS ─────────────────────────────────────────────
 %% FallbackFonts is unreliable on macOS XeLaTeX/AAT.
 %% newunicodechar maps specific missing codepoints to a fallback font directly.
 \usepackage{newunicodechar}
-\newfontface{\FWFallback}{IBM Plex Mono}[Scale=0.9, RawFeature={-tlig;-trep}]
+\newfontface{\FWFallback}{Noto Sans}[Scale=0.9, RawFeature={-tlig;-trep}]
 \newunicodechar{µ}{{\FWFallback µ}}
 \newunicodechar{≤}{{\FWFallback ≤}}
 \newunicodechar{≥}{{\FWFallback ≥}}
@@ -67,6 +67,7 @@
 \newunicodechar{±}{{\FWFallback ±}}
 \newunicodechar{≠}{{\FWFallback ≠}}
 \newunicodechar{∞}{{\FWFallback ∞}}
+\newunicodechar{·}{{\FWFallback ·}}
 
 \newunicodechar{–}{-}
 \newunicodechar{—}{-}
