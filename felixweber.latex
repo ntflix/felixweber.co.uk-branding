@@ -365,7 +365,7 @@
 }
 
 %% ─── BLOCKQUOTES ──────────────────────────────────────────────────────────────
-\renewenvironment{quote}{\begin{pixcard}[FWNeonMagenta]\color{FWText!80}}{\end{pixcard}}
+\renewenvironment{quote}{\begin{pixcard}[FWText]\color{FWText!80}}{\end{pixcard}}
 
 %% ─── HYPERLINKS ───────────────────────────────────────────────────────────────
 \usepackage[
